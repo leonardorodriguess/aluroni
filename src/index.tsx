@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import { Router } from 'react-router-dom';
 import AppRouter from 'routes';
 
 const root = ReactDOM.createRoot(
