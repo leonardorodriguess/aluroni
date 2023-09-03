@@ -1,14 +1,18 @@
-import classNames from 'classnames';
 import styles from './Prato.module.scss';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import cardapio from 'data/cardapio.json';
 import TagsPrato from 'components/TagsPrato';
+import NotFound from 'pages/NotFound';
 
 export default function Prato() {
   const { state } = useLocation();
   const { id } = useParams();
   const prato = cardapio.find(c => c.id === Number(id)) ;
   const navigate = useNavigate();
+
+  if(!prato) {
+    return <NotFound/>;
+  }
 
   return (
     <>
